@@ -1,0 +1,31 @@
+npm install jsonwebtoken cookie-parser dotenv mongoose bcryptjs express mailtrap crypto 
+
+
+openssl rand -base64 32 //generate secret for dotenv file 
+npm install framer-motion // for animation
+
+
+
+
+
+
+
+
+keyborad shortcut 
+fn+left , fn+right // go to the start of the line or the end of the line
+fn+up , fn+down //
+
+ctrl + shift + K //delete current line 
+ctrl + l // select current line
+ctrl + shift + p // reload window or others tools
+
+
+
+
+
+
+//browser shortcuts
+
+ctrl + t //new tab 
+ctrl + tab //next tab 
+ctrl + l //select url 
