@@ -13,7 +13,6 @@ const ProductCard = ({ product }) => {
         }else {
 			addToCart(product) ;  
         }
-
 	}; 
 
 	return (

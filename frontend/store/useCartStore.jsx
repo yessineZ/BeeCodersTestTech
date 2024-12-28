@@ -29,7 +29,7 @@ export const useCartStore = create((set,get) => ({
         
         set((prevState) => {
             console.log(prevState) ; 
-            const existingItem = prevState.cart.find((item) => item.product._id === product._id);
+            const existingItem = prevState.cart.find((item) => item._id === product._id);
             let newCart = [] ; 
             if(!existingItem) {
                 newCart = [...prevState.cart, { ...product }];
@@ -52,7 +52,7 @@ removeFromCart : async (productId) => {
         });
         console.log(res) ; 
         set((prevState) => {
-            return { cart: prevState.cart.filter((item) => item.product._id !== productId) };
+            return { cart: prevState.cart.filter((item) => item._id !== productId) };
         });
         get().calculateTotals() ; 
 
@@ -96,7 +96,7 @@ clearCart : async () => {
  },
     calculateTotals : () => {
         const { coupon , cart} = get() ; 
-        const subtotal = cart.reduce((sum,item) => sum + item.product.price,0 ) ; 
+        const subtotal = cart.reduce((sum,item) => sum + item.price,0 ) ; 
         let total = subtotal ;
         console.log(total) ;  
         if(coupon) {

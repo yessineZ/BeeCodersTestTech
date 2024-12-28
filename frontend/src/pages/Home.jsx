@@ -5,11 +5,14 @@ import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import ProductCard from '../components/ProductCard';
 import { motion } from 'framer-motion';
+import { useCartStore } from '../../store/useCartStore';
 const Home = () => {
   const {  loading , products } = useProductStore() ;  
+  const { getCartItems } = useCartStore() ; 
   console.log(products) ; 
   useEffect(() => {
     useProductStore.getState().fetchAllProducts();
+    getCartItems() ;
 
   },[]) ;
 

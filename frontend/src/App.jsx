@@ -13,8 +13,11 @@ import DashboradPage from './pages/DashboradPage'
 import ForgetPassword from './pages/ForgetPassword'
 import ResetPassword from './pages/ResetPassword' ; 
 import { useQueryClient } from '@tanstack/react-query'
-import Navbar from './components/NavBar'
-import AdminPage from './pages/AdminPage'
+import Navbar from './components/NavBar';
+import AdminPage from './pages/AdminPage' ;
+import CartPage from './pages/cartPage';
+import PurchaseSuccessPage from './pages/SuccessPurchase' ;
+import PurchaseCancelPage from './pages/PurchaseCancelPage' ;
 const fetchUser = async () => 
 {
   try {
@@ -57,6 +60,9 @@ function App() {
         <Route path='/forget-password' element={<ForgetPassword/>} />
         <Route path='/reset-password/:link' element={<ResetPassword/> } ></Route>
         <Route path='/secret-dashboard' element={authUser?.role === 'admin' ? <AdminPage/> : <Navigate to='/login' /> } />
+        <Route path='/cart' element={authUser && <CartPage/>}></Route>
+          <Route path='/purchase-success' element={authUser && <PurchaseSuccessPage/>}></Route>
+          <Route path='/purchase-cancel' element={authUser && <PurchaseCancelPage/>}></Route>
       </Routes>
     </div>
     
