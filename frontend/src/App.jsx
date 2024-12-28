@@ -13,6 +13,8 @@ import DashboradPage from './pages/DashboradPage'
 import ForgetPassword from './pages/ForgetPassword'
 import ResetPassword from './pages/ResetPassword' ; 
 import { useQueryClient } from '@tanstack/react-query'
+import Navbar from './components/NavBar'
+import AdminPage from './pages/AdminPage'
 const fetchUser = async () => 
 {
   try {
@@ -45,15 +47,16 @@ function App() {
            <FloatingShape color="bg-emerald-500" size="w-48 h-48" top="70%" left="10%" delay={5} /> 
            <FloatingShape color="bg-lime-500" size="w-32 h-32" top="40%" left="-10%" delay={2} /> 
       <Toaster/>
+      <Navbar/>
       <Routes>
         
-        <Route path="/signUp" element={authUser && authUser?.isVerfied ? <Navigate to='/home'></Navigate> : authUser && !authUser.isVerified ? <Navigate to='/EmailVerification'></Navigate> : <SignUpPage/> } />
-        <Route path="/login" element={authUser && authUser?.isVerfied ? <Navigate to='/home'></Navigate> : authUser && !authUser.isVerfied ? <Navigate to='/EmailVerification'></Navigate> : <LoginPage/>} />
+        <Route path="/signUp" element={authUser && authUser?.isVerfied ? <Navigate to='/'></Navigate> : authUser && !authUser.isVerified ? <Navigate to='/EmailVerification'></Navigate> : <SignUpPage/> } />
+        <Route path="/login" element={authUser && authUser?.isVerfied ? <Navigate to='/'></Navigate> : authUser && !authUser.isVerfied ? <Navigate to='/EmailVerification'></Navigate> : <LoginPage/>} />
         <Route path="/EmailVerification" element={authUser ? <EmailVerification/> : <LoginPage/> } ></Route>
-        <Route path='/home' element={authUser && authUser.isVerfied ? <Home/> :  authUser && !authUser.isVerfied ? <Navigate to='/EmailVerification'></Navigate> : <Navigate to='/login'></Navigate>  } />
+        <Route path='/' element={authUser && authUser.isVerfied ? <Home/> :  authUser && !authUser.isVerfied ? <Navigate to='/EmailVerification'></Navigate> : <Navigate to='/'></Navigate>  } />
         <Route path='/forget-password' element={<ForgetPassword/>} />
         <Route path='/reset-password/:link' element={<ResetPassword/> } ></Route>
-        <Route path='/Dashboard' element={authUser && authUser.isVerfied ? <DashboradPage/> : authUser && !authUser.isVerfied  ?  <Navigate to='/EmailVerification'></Navigate> : <Navigate to='/login'></Navigate> }></Route>
+        <Route path='/secret-dashboard' element={authUser?.role === 'admin' ? <AdminPage/> : <Navigate to='/login' /> } />
       </Routes>
     </div>
     

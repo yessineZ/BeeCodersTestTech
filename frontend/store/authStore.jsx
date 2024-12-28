@@ -7,9 +7,9 @@ export const useAuthStore = create((set) => ({
 
     getUser: async () => {
         try {
-            const response = await axios.get('/api/auth/getMe', {
-                withCredentials: true,
-            });
+            const response = await axios.get('/api/auth/getMe',{
+      withCredentials : true 
+    });
             console.log(response) ; 
 
             const user = response.data?.user || null;
@@ -22,7 +22,7 @@ export const useAuthStore = create((set) => ({
         } catch (err) {
             console.error('Error fetching user:', err.message);
             toast.error('Failed to fetch user information.');
-            return null; // Return null if there's an error
+            return null; 
         }
     },
 }));

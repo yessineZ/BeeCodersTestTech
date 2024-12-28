@@ -1,21 +1,49 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import {motion} from 'framer-motion' ; 
-const Home = () => {
-  return (
-    <div className='font-bold text-primary p-6 rounded-sm flex flex-col'>
-      Welcome Home 
-      <Link to={'/Dashboard'}>
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{scale :0.9 }}
-          className='my-2 w-full py-3 px-4 bg-gradient-to-t from-green-500 to-emerald-500 text-white font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 '
-          >DashBoard
 
-          </motion.button>
-      </Link>
-    </div>
-  )
+import React from 'react'
+import { useProductStore } from '../../store/useProductStore'
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import ProductCard from '../components/ProductCard';
+import { motion } from 'framer-motion';
+const Home = () => {
+  const {  loading , products } = useProductStore() ;  
+  console.log(products) ; 
+  useEffect(() => {
+    useProductStore.getState().fetchAllProducts();
+
+  },[]) ;
+
+    return (
+		<div className='min-h-screen'>
+			<div className='relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-16'>
+				<motion.h1
+					className='text-center text-4xl sm:text-5xl font-bold text-emerald-400 mb-8'
+					initial={{ opacity: 0, y: -20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8 }}
+				>
+					Our Courses
+				</motion.h1>
+
+				<motion.div
+					className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center'
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 0.2 }}
+				>
+					{products?.length === 0 && (
+						<h2 className='text-3xl font-semibold text-gray-300 text-center col-span-full'>
+							No products found
+						</h2>
+					)}
+
+					{products?.map((product) => (
+						<ProductCard key={product._id} product={product} />
+					))}
+				</motion.div>
+			</div>
+		</div>
+	);
 }
 
-export default Home
+export default Home ; 

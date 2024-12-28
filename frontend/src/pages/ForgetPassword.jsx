@@ -87,31 +87,16 @@ const ForgetPassword = () => {
           className='my-2 w-1/2 py-3 px-4 bg-gradient-to-t from-green-500 to-emerald-500 text-white font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 '
          onClick={handleClick}
           >Submit
-
           </motion.button>
             </div>
-
-
-
-
-                    
-            
         ) : (
             <div className='flex items-center justify-center gap-3 flex-col'>
                 
                 <span className='text-3xl text-white p-2 bg-success  rounded-full '><MdEmail/></span>
-                <span className='text-center bg-gradient-to-r text-center from-emerald-600 to-emerald-900 bg-clip-text mt-2 '>if {email} exist , you will find email that contains password reset url </span>
-
-
-
-                
-
+                <span className='text-center bg-gradient-to-r from-emerald-600 to-emerald-900 bg-clip-text mt-2 '>if {email} exist , you will find email that contains password reset url </span>
             </div>
 
         )}  
-            
-
-
             <div className='w-full backdrop-blur-xl bg-gradient-to-r gap-2  rounded-b-xl  from-green-200 via-green-700 h-12 to-green-800 flex items-center justify-center    '>
                 <Link to={'/login'}>
                 <span className='text-black'><FaArrowAltCircleLeft/></span>
@@ -120,13 +105,6 @@ const ForgetPassword = () => {
                 
                 <h2 className='font-bold text-center text-black my-2'> go back to login</h2>
             </div>
-
-            
-            
-
-           
-
-
         </motion.div>
   )
 }
