@@ -13,20 +13,20 @@ const CartItem = ({ item }) => {
 				</div>
 				<div className='flex items-center justify-between md:order-3 md:justify-end'>
 					<div className='text-end md:order-4 md:w-32'>
-						<p className='text-base font-bold text-emerald-400'>{item?.price} dt</p>
+						<p className='text-base font-bold text-pink-700'>{item?.price} dt</p>
 					</div>
 				</div>
 
 				<div className='w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md'>
-					<p className='text-base font-medium text-white hover:text-emerald-400 hover:underline'>
-						{item?.product?.name}
+					<p className='text-base font-bold text-white hover:text-pink-700 hover:underline'>
+						{item?.name}
 					</p>
-					<p className='text-sm text-gray-400'>{item?.description}</p>
+					<p className='text-sm text-pink-700'>{item?.description}</p>
 
 					<div className='flex items-center gap-4'>
 						<button
-							className='inline-flex items-center text-sm font-medium text-red-400
-							 hover:text-red-300 hover:underline'
+							className='inline-flex items-center text-sm font-medium text-pink-900
+							 hover:text-pink-600 hover:underline'
 							onClick={async () => await removeFromCart(item._id)}
 						>
 							<Trash />

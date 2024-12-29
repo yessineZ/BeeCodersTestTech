@@ -47,10 +47,10 @@ const ResetPassword = () => {
     initial={{y : 20 , opacity : 0}}
     animate={{y : 0 , opacity : 1}}
     transition={{duration : 0.5}}
-    className='max-w-md flex flex-col items-center justify-center  w-full backdrop-blur backdrop-filter max-w-xl bg-gradient-to-r from-emerald-500 to-emerald-950 rounded-2xl '
+    className='max-w-md flex flex-col items-center justify-center  w-full backdrop-blur backdrop-filter max-w-xl bg-gradient-to-r from-pink-700 to-pink-950 rounded-2xl '
     >
         <div className="mt-2">
-           <h2 className="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text">Reset Password</h2>
+           <h2 className="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-pink-700 to-pink-950 text-transparent bg-clip-text">Reset Password</h2>
         </div>
 
         <div className='flex flex-col'>
@@ -79,7 +79,7 @@ const ResetPassword = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{scale :0.9 }}
-          className='my-2 w-1/2 py-3 px-4 bg-gradient-to-t from-green-500 to-emerald-500 text-white font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 '
+          className='my-2 w-1/2 py-3 px-4 bg-gradient-to-t from-pink-700 to-pink-950 text-white font-bold rounded-lg shadow-lg hover:from-pink-700 hover:to-pink-900 focus:outline-none focus:ring-4 focus:ring-pink-900 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 '
         onClick={handleClick}
           >Submit
 

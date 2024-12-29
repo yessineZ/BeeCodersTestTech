@@ -16,10 +16,10 @@ const PasswordStrength = ({password}) => {
             {criteria.map((item) => (
             <div key={item.label} className="flex items-center text-xs">
                 {item.met ? (
-                    <FaCheck className="text-green-500 size-5 mr-2" /> ) : 
-                    <ImCross className="text-red-500 size-5 mr-2" /> 
+                    <FaCheck className="text-green-900 size-5 mr-2" /> ) : 
+                    <ImCross className="text-pink-700 size-5 mr-2" /> 
                 }
-                <span className={item.met ? 'text-green-500' : 'text-gray-500'}>{item.label}</span>
+                <span className={item.met ? 'text-pink-700' : 'text-gray-500'}>{item.label}</span>
                 
             </div>
             )  )}
@@ -43,9 +43,9 @@ const PasswordStrengthMeter = ({password}) => {
         switch (strength) {
             case 0: return 'bg-danger'
             case 1: return 'bg-warning'
-            case 2: return 'bg-success2'
+            case 2: return 'bg-danger'
             case 3: return 'bg-success' 
-            case 4: return 'bg-success'
+            case 4: return 'bg-danger'
             default: return 'bg-success'
         }
     };

@@ -21,8 +21,17 @@ export const useAuthStore = create((set) => ({
 
         } catch (err) {
             console.error('Error fetching user:', err.message);
-            toast.error('Failed to fetch user information.');
             return null; 
         }
     },
+
+       logout : async () => {
+        try  {
+            const res = await axios.get('/api/auth/logout') ; 
+            console.log(res) ;
+            window.location.reload() ; 
+        }catch(e) {
+            console.log(e) ;
+        }
+      }
 }));

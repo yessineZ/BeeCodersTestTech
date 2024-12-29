@@ -98,7 +98,7 @@ const SignUpPage = () => {
 
     >
         <div className='p-8'>
-            <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text">Create Account</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-pink-700 to-pink-800 text-transparent bg-clip-text">Create Account</h2>
         <form onSubmit={handleSignUp}>
             <Input placeholder="username"
                 value={signUp.username}
@@ -139,7 +139,7 @@ const SignUpPage = () => {
             <PasswordStrengthMeter password={signUp.password}/>
 
 
-             <motion.button className='mt-5 w-full py-3 px-4 bg-gradient-to-t from-green-500 to-emerald-500 text-white font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200'
+             <motion.button className='mt-5 w-full py-3 px-4 bg-pink-700 text-white font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200'
              whileTap={{scale : 0.98}}
              whileHover={{scale :1.02}}
              type='submit'

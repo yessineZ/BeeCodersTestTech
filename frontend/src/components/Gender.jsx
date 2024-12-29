@@ -6,7 +6,7 @@ const Gender = ({setSignUp,signUp}) => {
       <div className="form-control">
         <label className="cursor-pointer label">
         <span className="label-text font-bold text-lg">Male</span>
-        <input type="radio" name='gender' onChange={() => setSignUp({...signUp,gender:"Male"})} className="checkbox checkbox-success ml-2" />
+        <input type="radio" name='gender' onChange={() => setSignUp({...signUp,gender:"Male"})} className="checkbox checkbox-error ml-2" />
         </label>
       </div>
 
@@ -14,7 +14,7 @@ const Gender = ({setSignUp,signUp}) => {
       <div className="form-control">
         <label className="cursor-pointer label">
         <span className="label-text font-bold text-lg">Female</span>
-        <input type="radio" name='gender'  className="checkbox checkbox-success ml-2" onChange={() => setSignUp({...signUp,gender:"Female"})} />
+        <input type="radio" name='gender'  className="checkbox checkbox-error ml-2" onChange={() => setSignUp({...signUp,gender:"Female"})} />
         </label>
       </div>
 

@@ -121,7 +121,7 @@ const EmailVerification = () => {
     className="max-w-md  w-full bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden flex flex-col items-center justify-center" >
 
      <div className='mt-2'>
-        <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text">Verification Code</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-pink-700 to-pink-950 text-transparent bg-clip-text">Verification Code</h2>
       </div>
 
       <div className="flex flex-row gap-2 items-center">
@@ -132,8 +132,8 @@ const EmailVerification = () => {
       {code.map((ele,index) => (
         <input 
         type="text" 
-        className="border-2  border-gray-300 p-2 rounded-lg w-10 mr-2 focus:border-green-500 focus:outline-none ml-2 size-12
-         text-center font-bold bg-gray-700 text-white  " 
+        className="border-2  border-gray-300 p-2 rounded-lg w-10 mr-2 focus:border-pink-700 focus:outline-none ml-2 size-12
+         text-center font-bold bg-gray-700 text-white" 
         key={index}
         ref={(ele) => (inputRefs.current[index] = ele)} 
         onChange={(e) => handleChange(index,e.target.value)}
@@ -143,7 +143,7 @@ const EmailVerification = () => {
         </div>
 
         <div className='m-6'>
-        <motion.button className='w-full py-3 px-4 bg-gradient-to-t from-green-500 to-emerald-500 text-white font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200'
+        <motion.button className='w-full py-3 px-4 bg-gradient-to-t from-pink-700 to-pink-900 text-white font-bold rounded-lg shadow-lg hover:from-pink-500 hover:to-pink-800 focus:outline-none focus:ring-4 focus:ring-pink-700 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200'
              whileTap={{scale : 0.98}}
              whileHover={{scale :1.02}}
              type='submit'

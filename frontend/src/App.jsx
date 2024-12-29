@@ -45,10 +45,10 @@ function App() {
   });
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-green-800 to-emerald-900 flex items-center justify-center relative overflow-hidden">
-           <FloatingShape color="bg-green-500" size="w-64 h-64" top="5%" left="40%" delay={0} /> 
-           <FloatingShape color="bg-emerald-500" size="w-48 h-48" top="70%" left="10%" delay={5} /> 
-           <FloatingShape color="bg-lime-500" size="w-32 h-32" top="40%" left="-10%" delay={2} /> 
+    <div className="min-h-screen bg-gradient-to-br bg-slate-400  from-white to-gray-100 via-slate-50  flex items-center justify-center relative overflow-hidden">
+           <FloatingShape color="bg-pink-200" size="w-64 h-64" top="5%" left="40%" delay={0} /> 
+           <FloatingShape color="bg-gray" size="w-48 h-48" top="70%" left="10%" delay={5} /> 
+           <FloatingShape color="bg-gray" size="w-32 h-32" top="40%" left="-10%" delay={2} /> 
       <Toaster/>
       <Navbar/>
       <Routes>
@@ -56,7 +56,7 @@ function App() {
         <Route path="/signUp" element={authUser && authUser?.isVerfied ? <Navigate to='/'></Navigate> : authUser && !authUser.isVerified ? <Navigate to='/EmailVerification'></Navigate> : <SignUpPage/> } />
         <Route path="/login" element={authUser && authUser?.isVerfied ? <Navigate to='/'></Navigate> : authUser && !authUser.isVerfied ? <Navigate to='/EmailVerification'></Navigate> : <LoginPage/>} />
         <Route path="/EmailVerification" element={authUser ? <EmailVerification/> : <LoginPage/> } ></Route>
-        <Route path='/' element={authUser && authUser.isVerfied ? <Home/> :  authUser && !authUser.isVerfied ? <Navigate to='/EmailVerification'></Navigate> : <Navigate to='/'></Navigate>  } />
+        <Route path='/' element={ <Home/>   } />
         <Route path='/forget-password' element={<ForgetPassword/>} />
         <Route path='/reset-password/:link' element={<ResetPassword/> } ></Route>
         <Route path='/secret-dashboard' element={authUser?.role === 'admin' ? <AdminPage/> : <Navigate to='/login' /> } />
